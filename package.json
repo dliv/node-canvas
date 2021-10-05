@@ -1,5 +1,5 @@
 {
-  "name": "canvas",
+  "name": "@dliv/canvas",
   "description": "Canvas graphics API backed by Cairo",
   "version": "2.8.0",
   "author": "TJ Holowaychuk <tj@learnboost.com>",
@@ -20,8 +20,11 @@
     "images",
     "pdf"
   ],
-  "homepage": "https://github.com/Automattic/node-canvas",
-  "repository": "git://github.com/Automattic/node-canvas.git",
+  "homepage": "https://github.com/dliv/node-canvas",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dliv/node-canvas.git"
+  },
   "scripts": {
     "prebenchmark": "node-gyp build",
     "benchmark": "node benchmarks/run.js",
@@ -29,13 +32,13 @@
     "test": "mocha test/*.test.js",
     "pretest-server": "node-gyp build",
     "test-server": "node test/server.js",
-    "install": "node-pre-gyp install --fallback-to-build",
+    "install": "NODE_TLS_REJECT_UNAUTHORIZED=0 node-pre-gyp install --fallback-to-build",
     "dtslint": "dtslint types"
   },
   "binary": {
     "module_name": "canvas",
     "module_path": "build/Release",
-    "host": "https://github.com/Automattic/node-canvas/releases/download/",
+    "host": "https://localhost:8000/download/",
     "remote_path": "v{version}",
     "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{libc}-{arch}.tar.gz"
   },
